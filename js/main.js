@@ -1,7 +1,7 @@
 console.log("main.js loaded");
 
 jQuery(document).ready(function(){
-    console.log("jQuery ready");
+    console.log("jQuery ready");    
 })
 
 function button_click(){
