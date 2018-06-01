@@ -17,6 +17,15 @@
             <button type="button" onclick="button_click()">Action</button>
             
         </div>
+        <script>
+        window.client=function(){
+            client.q.push(arguments)
+        };
+        client.q=[];
+        client.d=+new Date;
+        client('send',{});
+        client('init');
+        </script>
         <script src="js/main.js"></script>
     </body>
 </html>
