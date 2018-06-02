@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+<?php define('PHP_','php/'); include('php/functions.php');
+$title="Project name";
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Project name</title>
+    <title><?php echo $title; ?></title>
     <!-- Bootstrap -->
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/glyphicon.css" rel="stylesheet">
@@ -28,7 +30,7 @@
     <div class="container">
         
         <div class="card box-shadow border-info">
-            <div class="card-header text-white bg-info">Project name</div>
+            <div class="card-header text-white bg-info"><?php echo $title; ?></div>
             <div class="card-body">
 
                 <div class="alert alert-info" role="alert">
