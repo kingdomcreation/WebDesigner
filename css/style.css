@@ -291,14 +291,12 @@ textarea {
 }
 
 body{
-    background-color: #F1F1F1;
+    background-color: #C4C4C4;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
 
-.container{
-    background-color: transparent;
-    padding: 14px;
-    width: 70%;
+.m-t {
+    margin-top: 20px;
 }
