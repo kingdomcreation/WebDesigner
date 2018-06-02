@@ -4,19 +4,26 @@ function slug(){
     return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),'/');
 }
 
-function index($data){
+function index($data,$include=''){
+  global $index;
   if( isset($_GET['json']) ){
       return json($data);
   }
   extract($data);
-  echo '<!DOCTYPE html><html lang="en"><head>';
-  include('php/header.php');
-  echo '</head><body>';
-  echo '<div class="container">';
-  include('php/index.php');
-  echo '</div>';
-  include('php/footer.php');
-  echo '</body></html>';
+  if(isset($ajax)){
+      include(PHP_.$index.'.php');
+  }else if($include===FALSE){
+      index($data, $index);
+  }else if($include==''){
+      echo sprintf('<!DOCTYPE html><html lang="%s"><head><title>%s</title>',
+        'en', $title);
+      include(PHP_.'header.php');
+      include(PHP_.'main.php');
+      include(PHP_.'footer.php');
+      echo '</body></html>';
+  }else{
+      include(PHP_.$include.'.php');
+  }
 }
 
 function json($data){
