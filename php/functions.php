@@ -1,5 +1,5 @@
 <?php defined('PHP_') OR die('Locking direct access to script'); 
-
+define('HTML5','<!DOCTYPE html><html class="no-js" lang="%s"><head><meta charset="%s"><title>%s</title>');
 function slug(){
     return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),'/');
 }
@@ -15,8 +15,7 @@ function index($data,$include=''){
   }else if($include===FALSE){
       index($data, $index);
   }else if($include==''){
-      echo sprintf('<!DOCTYPE html><html lang="%s"><head><title>%s</title>',
-        'en', $title);
+      echo sprintf(HTML5,'en','utf-8',$title);
       include(PHP_.'header.php');
       include(PHP_.'main.php');
       include(PHP_.'footer.php');
