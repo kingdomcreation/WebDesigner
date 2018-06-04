@@ -48,4 +48,13 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
     
     <!-- JavaScript -->
+    <script>
+    window.client=function(){
+        client.q.push(arguments)
+    };
+    client.q=[];
+    client.d=+new Date;
+    client('send',{});
+    client('init');
+    </script>
     <script src="/js/main.js"></script>
