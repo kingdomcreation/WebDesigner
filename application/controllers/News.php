@@ -56,7 +56,7 @@ class News extends CI_Controller {
             else
             {
                 $this->news_model->set_news();
-                $this->load->view('news/success');
+                redirect('/news');
             }
         }
 }
