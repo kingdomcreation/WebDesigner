@@ -7,6 +7,9 @@ function slug(){
 function index($data,$include=''){
   global $index;
   if( isset($_GET['json']) ){
+      if(!headers_sent()){
+          header('Content-Type: application/json');
+      }
       return json($data);
   }
   extract($data);
@@ -26,9 +29,6 @@ function index($data,$include=''){
 }
 
 function json($data){
-    if(!headers_sent()){
-        header('Content-Type: application/json');
-    }
     return json_encode($data);
 }
 
