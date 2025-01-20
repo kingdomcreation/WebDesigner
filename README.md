@@ -15,5 +15,5 @@ npm run docs:dev
 ```
 
 ## What it does?
-- Allows you to write your docs in markdown in a seperate folder from vitepress
-- Links the vitepress inside /docs/.vitepress
+- Allows you to write your docs in markdown in a seperate folder from [vitepress](https://vitepress.dev/guide/what-is-vitepress)
+- Links the vitepress inside `/docs/.vitepress`
