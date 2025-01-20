@@ -1,13 +1,16 @@
-# Vitepress
-Documentation folder based rendered using vitepress
+# VitePress
+> Vite & Vue Powered Static Site Generator
 
 ## Installation
+```bash
+git checkout vitepress
 ```
+```bash
 npm install && npm run link:docs
 ```
 
 ## Start Vitepress
-```
+```bash
 npm run docs:dev
 ```
 
