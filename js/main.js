@@ -19,3 +19,9 @@ function button_click(){
 }
 
 jQuery("#button").on("click", button_click);
+
+
+window.addEventListener('DOMContentLoaded', function(event) {
+
+    console.log("DOM content loaded");
+});

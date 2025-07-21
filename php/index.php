@@ -1,4 +1,4 @@
-<div class="card box-shadow border-info">
+<div class="card shadow border-info">
     <div class="card-header text-white bg-info"><?php echo $title; ?></div>
     <div class="card-body">
 
@@ -7,16 +7,18 @@
         </div>
         
         <form>
-            <div class="form-group row">
-                <label for="textbox" class="col-4 col-sm-2 col-form-label text-right">Input:</label>
-                <div class="col-8 col-sm-10">
-                <input type="text" class="form-control" id="textbox" placeholder="">
-                </div>
+            <div class="row mb-3">
+              <div class="col-2 text-end">
+                <label class="form-label" for="textbox">Input:</label>
+              </div>
+              <div class="col">
+                <input class="form-control" id="textbox" type="text">
+              </div>
             </div>
-            <div class="form-group row">
-                <div class="offset-4 offset-sm-2 col-8 col-sm-10">
-                    <button type="button" class="btn btn-info" id="button">Action</button>
-                </div>
+            <div class="row">
+              <div class="offset-2">
+                <button type="button" class="btn btn-info" id="button">Action</button>
+              </div>
             </div>
         </form>
 
