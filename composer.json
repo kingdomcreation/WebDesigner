@@ -1,7 +1,9 @@
 {
     "require": {
         "symfony/framework-bundle": "^7.2",
-        "symfony/runtime": "^7.2"
+        "symfony/runtime": "^7.2",
+        "symfony/dotenv": "^7.3",
+        "symfony/console": "^7.3"
     },
     "config": {
         "allow-plugins": {

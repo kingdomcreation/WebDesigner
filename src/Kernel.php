@@ -10,6 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
+use Symfony\Component\Dotenv\Dotenv;
 
 class Kernel extends BaseKernel
 {
@@ -38,6 +39,9 @@ class Kernel extends BaseKernel
         ]);
 
         //$container->import(__DIR__.'/../config/framework.yaml');
+
+        $dotenv = new Dotenv();
+        $dotenv->loadEnv(__DIR__.'/../.env', overrideExistingVars: true);
 
 
         // register all classes in /src/ as service
