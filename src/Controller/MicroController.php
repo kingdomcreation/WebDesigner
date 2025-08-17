@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Dotenv\Dotenv;
 
 class MicroController extends AbstractController
 {
@@ -12,6 +13,9 @@ class MicroController extends AbstractController
     public function home(): Response
     {   
         $projectDir = $this->getParameter('kernel.project_dir');
+
+        $dotenv = new Dotenv();       
+        $dotenv->loadEnv($projectDir.'/.env', overrideExistingVars: true);
         
         return new Response('<h1>Hello World!<pre> ['.
             $projectDir.']('.$_ENV['DATABASE_URL'].')'
@@ -29,12 +33,8 @@ class MicroController extends AbstractController
     #[Route('/login')]
     public function login(): Response
     {
+        $adminEmail = $this->getParameter('app.admin_email');
         
-
-        
-        $adminEmail = 'king'; //$this->getParameter('app.admin_email');
-
-
-        return new Response('Login '.$projectDir.' contact: '.$adminEmail);
+        return new Response('Login:  '.$adminEmail);
     }
 }

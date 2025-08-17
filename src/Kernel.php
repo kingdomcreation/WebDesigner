@@ -10,7 +10,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
-use Symfony\Component\Dotenv\Dotenv;
 
 class Kernel extends BaseKernel
 {
@@ -33,17 +32,16 @@ class Kernel extends BaseKernel
 
     protected function configureContainer(ContainerConfigurator $container): void
     {
+        // Global settings
+        $container->parameters()
+            ->set('app.admin_email', 'example@gmail.com');
+        
         // PHP equivalent of config/packages/framework.yaml
         $container->extension('framework', [
             'secret' => 'S0ME_SECRET'
         ]);
 
         //$container->import(__DIR__.'/../config/framework.yaml');
-
-        $dotenv = new Dotenv();
-        $dotenv->loadEnv(__DIR__.'/../.env', overrideExistingVars: true);
-
-
         // register all classes in /src/ as service
         $container->services()
             ->load('App\\', __DIR__.'/*')
