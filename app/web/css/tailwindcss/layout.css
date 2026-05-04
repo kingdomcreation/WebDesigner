@@ -1,0 +1,27 @@
+.app-shell {
+    @apply flex flex-col min-h-screen bg-gray-50;
+}
+
+.app-header {
+    @apply flex items-center h-14 bg-brand text-white px-4 shadow;
+}
+
+.header-logout-form {
+    @apply ml-auto;
+}
+
+.header-logout-btn {
+    @apply text-white/80 text-sm hover:text-white transition-colors;
+}
+
+.app-body {
+    @apply flex flex-1 overflow-hidden;
+}
+
+.app-sidebar {
+    @apply w-64 bg-gray-900 text-white flex-shrink-0 overflow-y-auto;
+}
+
+.main-content {
+    @apply flex-1 overflow-y-auto;
+}
