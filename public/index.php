@@ -1,5 +1,5 @@
 <?php define("PHP_", "../php/");
-include "php/functions.php";
+include "../php/functions.php";
 debug();
 $index = $data["url"] = slug();
 $pages = [
